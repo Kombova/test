@@ -124,7 +124,7 @@ nav a:hover{
 }
 .top_content{
     
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -152,7 +152,7 @@ nav a:hover{
 
     max-width: 286px;
     display: block;
-    margin: 22px auto 0px;
+    margin: 0px auto;
     
 }
 .top_content span{
