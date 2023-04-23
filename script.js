@@ -41,17 +41,22 @@ navUl.forEach((item)=>{
     item.childNodes.forEach((select)=>{
         select.addEventListener('click',(event)=>{
             console.dir(event.target.outerText)
-            if(event.target.outerText === 'ГЛАВНАЯ'){
+            if(event.target.outerText === 'ГЛАВНАЯ' && iteratorSubmitNextButton < 11 ){
                 document.querySelector(`.test_${iteratorSubmitNextButton}`).style.display='none';
 
                 homePage.style.display='block';
-            }else if(event.target.outerText === 'ИНФОРМАЦИЯ О ТЕСТЕ'){
+            }else if(event.target.outerText === 'ИНФОРМАЦИЯ О ТЕСТЕ' && iteratorSubmitNextButton < 11){
                 document.querySelector(`.test_${iteratorSubmitNextButton}`).style.display='none';
                 homePage.style.display='block';
-            }else{
-
+            }else if(event.target.outerText === 'ГЛАВНАЯ' && iteratorSubmitNextButton > 11){
+                homePage.style.display='block';
+            }
+            else if(event.target.outerText === 'ИНФОРМАЦИЯ О ТЕСТЕ' && iteratorSubmitNextButton > 11){
+                homePage.style.display='block';
             }
             testBlock.style.display='none';
+            document.querySelector('.results').style.display= 'none';
+            document.querySelector('.final').style.display='none';
             item.parentElement.style.display='none';
             document.body.style.overflow = "";
             iteratorSubmitNextButton=1;
@@ -98,7 +103,8 @@ select_blocks.forEach((item)=>{
         localStorage.setItem(`test_${iteratorSubmitNextButton}`, `${test_result}`);
         if(iteratorSubmitNextButton === 11){
             iProgressBar=100;
-            document.querySelector(`.test_${iteratorSubmitNextButton-1}`).style.display='none' 
+            iteratorSubmitNextButton += 1;
+            document.querySelector(`.test_${iteratorSubmitNextButton-1}`).style.display='none'; 
             document.querySelector(`.results`).style.display='flex';
             progressBar.style.width = `${iProgressBar}%`;
             nextButton.style.display='none';
@@ -137,10 +143,12 @@ select_blocks.forEach((item)=>{
                 }, 1000);
               }, 2000);
             
+        }else{ 
+            iteratorSubmitNextButton += 1;
+            document.querySelector(`.test_${iteratorSubmitNextButton}`).style.display='flex';
         }
-        iteratorSubmitNextButton += 1;
         document.querySelector(`.test_${iteratorSubmitNextButton - 1}`).style.display='none' ;
-        document.querySelector(`.test_${iteratorSubmitNextButton}`).style.display='flex';
+        
         target.disabled = true;
         nextButton.style.background='';
 
