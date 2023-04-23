@@ -40,7 +40,6 @@ navUl.forEach((item)=>{
 
     item.childNodes.forEach((select)=>{
         select.addEventListener('click',(event)=>{
-            console.dir(event.target.outerText)
             if(event.target.outerText === 'ГЛАВНАЯ' && iteratorSubmitNextButton < 11 ){
                 document.querySelector(`.test_${iteratorSubmitNextButton}`).style.display='none';
 
@@ -187,13 +186,11 @@ call.addEventListener('click',()=>{
             fetchData = data
         })
         .catch(error => console.error(error));
-        
-    console.log(fetchData);
-    
+
         let text;
         for (const key in fetchData) {
             if (fetchData.hasOwnProperty(key) && fetchData[key] !== undefined) {
-                console.log(key,fetchData[key]);
+            
                 text +=`${key} : ${fetchData[key]}<br/>`;
               }
             
