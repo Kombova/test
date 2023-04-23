@@ -163,8 +163,7 @@ nav a:hover{
     text-transform: uppercase;
 
     color: #FFFFFF;
-
-    margin-top: 27px;
+    padding-top: 60px;
 }
 .top_content h6{
     font-family: 'Yeseva One';
@@ -186,9 +185,7 @@ nav a:hover{
     display: block;
     margin: 0px auto;
     width: 200px;
-    height: 200px;
-
-    
+    height: 200px;  
 
 }
 .yellow_button{
@@ -214,6 +211,8 @@ nav a:hover{
 .scroll_button{
    display: block;
    margin: auto auto 0px;
+   width: 16px;
+   height: 16px;
 }
 .section_2_top_text{
     position: relative;
