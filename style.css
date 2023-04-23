@@ -127,11 +127,12 @@ nav a:hover{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 
 }
 @media screen and (max-width: 767px) {
     .top_content {
-      height: auto;
+      height: screen;
     }
   }
 .top_content p{
