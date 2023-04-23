@@ -131,11 +131,11 @@ nav a:hover{
    
 
 }
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
     .top_content {
       height: auto;
     }
-  }
+  } */
 .top_content p{
     font-family: 'PT Serif';
     font-style: normal;
