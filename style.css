@@ -127,7 +127,13 @@ nav a:hover{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
+@media screen and (max-width: 767px) {
+    .top_content {
+      height: auto;
+    }
+  }
 .top_content p{
     font-family: 'PT Serif';
     font-style: normal;
@@ -148,8 +154,6 @@ nav a:hover{
     
 }
 .top_content span{
-    
-
     color: white;
 }
 .top_content h4{
