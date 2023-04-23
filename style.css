@@ -119,17 +119,17 @@ nav a:hover{
     z-index: -1;
     width: 100%;
     height: 100%;
-    
-
 }
 .top_content{
     
     min-height: 100vh;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
+    justify-content: space-evenly;
 
+    overflow: hidden;
+    text-align: center;
 }
 /* @media screen and (max-width: 767px) {
     .top_content {
@@ -153,6 +153,7 @@ nav a:hover{
     max-width: 286px;
     display: block;
     margin: 0px auto;
+    position: relative;
     
 }
 .top_content span{
@@ -169,7 +170,7 @@ nav a:hover{
     text-transform: uppercase;
 
     color: #FFFFFF;
-    padding-top: 60px;
+    
 }
 .top_content h6{
     font-family: 'Yeseva One';
@@ -188,10 +189,10 @@ nav a:hover{
 }
 .main_brain_img{
     display: block;
-    margin: 0px auto;
+    margin: -40px auto;
     width: 200px;
     height: 200px;  
-
+    
 }
 .yellow_button{
     display: block;
@@ -212,6 +213,13 @@ nav a:hover{
     text-transform: uppercase;
 
     color: #0D0C11;
+}
+.scroll{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 .scroll_button{
    display: block;
