@@ -112,7 +112,31 @@ select_blocks.forEach((item)=>{
                 clearInterval(interval);
                 document.querySelector('.results').style.display= 'none';
                 document.querySelector('.final').style.display='block';
+
+                // timer
+                let timeLeft = 600000;
+
+                let timerInterval = setInterval(function() {
+
+                let minutesLeft = Math.floor(timeLeft / 60000);
+                let secondsLeft = Math.floor((timeLeft % 60000) / 1000);
+
+                if (secondsLeft < 10) {
+                    secondsLeft = "0" + secondsLeft;
+                }
+
+                timerElement.innerHTML = minutesLeft + ":" + secondsLeft;
+
+                timeLeft -= 1000;
+
+                if (timeLeft < 0) {
+                    clearInterval(timerInterval);
+                    timerElement.innerHTML = "Время вышло!";
+                }
+
+                }, 1000);
               }, 2000);
+            
         }
         iteratorSubmitNextButton += 1;
         document.querySelector(`.test_${iteratorSubmitNextButton - 1}`).style.display='none' ;
@@ -125,29 +149,7 @@ select_blocks.forEach((item)=>{
         progressBar.style.width = `${iProgressBar}%`;
     })
     
-// timer
-    
-let timeLeft = 600000;
 
-let timerInterval = setInterval(function() {
-
-  let minutesLeft = Math.floor(timeLeft / 60000);
-  let secondsLeft = Math.floor((timeLeft % 60000) / 1000);
-
-  if (secondsLeft < 10) {
-    secondsLeft = "0" + secondsLeft;
-  }
-
-  timerElement.innerHTML = minutesLeft + ":" + secondsLeft;
-
-  timeLeft -= 1000;
-
-  if (timeLeft < 0) {
-    clearInterval(timerInterval);
-    timerElement.innerHTML = "Время вышло!";
-  }
-
-}, 1000);
 
 viewTest.forEach((item)=>{
     item.addEventListener('click',()=>{
@@ -189,9 +191,6 @@ call.addEventListener('click',()=>{
             
             
         }
-
-        
-        // const newText = document.createTextNode(`${text}`);
         
         newDiv.innerHTML=`${text}`;
         document.querySelector('.final').appendChild(newDiv);
