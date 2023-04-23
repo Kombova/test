@@ -49,7 +49,7 @@ navUl.forEach((item)=>{
                 document.querySelector(`.test_${iteratorSubmitNextButton}`).style.display='none';
                 homePage.style.display='block';
             }else{
-                
+
             }
             testBlock.style.display='none';
             item.parentElement.style.display='none';
@@ -153,6 +153,7 @@ viewTest.forEach((item)=>{
     item.addEventListener('click',()=>{
         homePage.style.display = 'none';
         testBlock.style.display = 'block';
+        document.querySelector(`.test_${iteratorSubmitNextButton}`).style.display='flex';
     })
 })
 
@@ -166,7 +167,7 @@ call.addEventListener('click',()=>{
     newDiv.style.height = "auto";
     newDiv.style.margin = "10px auto";
     newDiv.style.overflow = "hidden";
-    newDiv.classList.add('viewApi')
+    newDiv.classList.add('viewApi');
    
    async function viewApiData() {
    let  fetchData ;
